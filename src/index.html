@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'">
+  <title>Jarvis</title>
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body class="compacto arrancando">
+  <div id="raiz">
+    <i class="esq e1"></i><i class="esq e2"></i><i class="esq e3"></i><i class="esq e4"></i>
+    <div class="rejilla" aria-hidden="true"></div>
+
+    <header class="barra">
+      <div class="marca">
+        <span id="punto"></span>
+        <span id="nombre">JARVIS</span>
+        <span class="sub">NÚCLEO 4D</span>
+      </div>
+      <span id="control-badge"></span>
+      <span id="estado-texto">INICIALIZANDO</span>
+      <span class="botones">
+        <button id="b-voz" title="Voz encendida/apagada">🔊</button>
+        <button id="b-escudo" title="Permisos y seguridad">🛡</button>
+        <button id="b-carpeta" title="Configuración, personalidad y memoria">⚙</button>
+        <button id="b-limpiar" title="Borrar conversación">⟲</button>
+        <button id="b-compactar" title="Achicar (Esc)">–</button>
+      </span>
+    </header>
+
+    <div id="zona-orbe" title="Clic para abrir/cerrar">
+      <canvas id="orbe"></canvas>
+      <!-- Encendido: el nombre se arma y sube el nivel de energía -->
+      <div id="arranque" aria-hidden="true">
+        <div class="ar-nombre" id="ar-nombre">JARVIS</div>
+        <div class="ar-energia"><span>NIVEL DE ENERGÍA</span><i><b id="ar-barra"></b></i><em id="ar-pct">0%</em></div>
+      </div>
+      <!-- Reloj al pasar el mouse por el núcleo -->
+      <div id="reloj-centro" aria-hidden="true"><span id="rc-hora">--:--</span><small id="rc-seg">00</small></div>
+      <!-- Micrófono mientras escucha -->
+      <div id="mic-centro" aria-hidden="true">
+        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round">
+          <rect x="24" y="10" width="16" height="28" rx="8"/><path d="M16 30a16 16 0 0 0 32 0M32 46v8M24 54h16"/>
+          <path d="M8 24a26 26 0 0 0 0 16M56 24a26 26 0 0 1 0 16" opacity=".55"/>
+        </svg>
+      </div>
+      <!-- Subtítulo bajo el núcleo (modo chico) -->
+      <div id="subtitulo-orbe" aria-live="polite"></div>
+      <div class="telemetria" aria-hidden="true">
+        <div class="t tl"><b>SYS</b><span id="t-hora">--:--:--</span><small id="t-fecha"></small></div>
+        <div class="t tr"><b>CPU</b><span id="t-cpu">--%</span><div class="mini"><i id="b-cpu"></i></div></div>
+        <div class="t bl"><b>RAM</b><span id="t-ram">-- GB</span><div class="mini"><i id="b-ram"></i></div></div>
+        <div class="t br"><b>4D</b><span id="t-4d">XW · YW · ZW</span><small id="t-up"></small></div>
+      </div>
+    </div>
+
+    <div class="separador"><span></span><em>REGISTRO</em><span></span></div>
+
+    <main id="chat"></main>
+
+    <form id="formulario" autocomplete="off">
+      <span class="prompt">›</span>
+      <input id="entrada" placeholder="Escribí una orden…" spellcheck="false">
+      <button type="button" id="b-mic" title="Hablar (Ctrl+Shift+Espacio)">🎙</button>
+      <button type="submit" id="b-enviar" title="Enviar">⏎</button>
+    </form>
+
+    <footer class="pie">
+      <span id="p-enlace">ENLACE —</span>
+      <span id="p-modelo">MODELO —</span>
+      <span id="p-latencia">LAT —</span>
+    </footer>
+  </div>
+
+  <script src="orbe.js"></script>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

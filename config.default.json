@@ -1,0 +1,46 @@
+{
+  "nombre": "Jarvis",
+  "endpoint": "http://localhost:11434/v1/chat/completions",
+  "modelo": "jarvis-cerebro",
+  "apiKey": "",
+  "temperatura": 0.5,
+  "herramientasNativas": true,
+
+  "voz": true,
+  "motorVoz": "piper",
+  "vozPiper": "es_MX-claude-high",
+  "tonoVoz": 0.96,
+  "efectoVoz": "holografico",
+  "velocidadVoz": 1.0,
+  "nombreVoz": "",
+
+  "vozEntrada": true,
+  "atajoVoz": "CommandOrControl+Shift+Space",
+  "activacion": "ambos",
+  "sensibilidadAplausos": 1,
+  "modeloVoz": "onnx-community/whisper-base",
+  "idiomaVoz": "spanish",
+
+  "modeloVision": "jarvis-cerebro",
+  "endpointVision": "http://localhost:11434/v1/chat/completions",
+  "minutosControl": 5,
+  "atajoDetener": "CommandOrControl+Shift+X",
+
+  "autorizacionPorVoz": true,
+  "fraseAutorizacion": "autorizo",
+
+  "proactivo": true,
+  "minutosProactivo": 40,
+
+  "modoAutonomo": false,
+  "maxHistorial": 12,
+  "pensar": false,
+
+  "calidadGrafica": "alta",
+  "haloOscuro": 0,
+  "marcoHUD": false,
+  "esquina": "abajo-derecha",
+  "atajo": "CommandOrControl+Shift+J",
+  "iniciarConWindows": false,
+  "comandoCerebro": ""
+}

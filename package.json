@@ -1,0 +1,43 @@
+{
+  "name": "jarvis-escritorio",
+  "productName": "Jarvis",
+  "version": "1.0.0",
+  "description": "Asistente de IA con red neuronal animada en la esquina del escritorio, conectado a OpenJarvis",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "empaquetar": "electron-builder --win portable"
+  },
+  "devDependencies": {
+    "electron": "latest",
+    "electron-builder": "latest"
+  },
+  "build": {
+    "appId": "ar.jarvis.escritorio",
+    "productName": "Jarvis",
+    "files": [
+      "main.js",
+      "preload.js",
+      "acciones.js",
+      "config.default.json",
+      "personalidad.default.md",
+      "icono.png",
+      "src/**",
+      "voz.js",
+      "control.js",
+      "seguridad.js",
+      "voz-salida.js"
+    ],
+    "win": {
+      "target": "portable",
+      "icon": "icono.png"
+    },
+    "asarUnpack": [
+      "**/*.node",
+      "**/onnxruntime-node/**"
+    ]
+  },
+  "dependencies": {
+    "@huggingface/transformers": "^3.7.0"
+  }
+}
